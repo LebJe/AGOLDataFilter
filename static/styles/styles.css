@@ -1,0 +1,102 @@
+input[type=text], select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=email], select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=address], select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=password], select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=number], select {
+	width: 50%;
+	display: inline-block;
+}
+
+textarea {
+	width: 50%;
+	display: inline-block;
+}
+
+select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=text]:focus {
+	outline: none;
+}
+
+input[type=email]:focus {
+	outline: none;
+}
+
+input[type=address]:focus {
+	outline: none;
+}
+
+input[type=number]:focus {
+	outline: none;
+}
+
+
+p {
+	text-align: center;
+}
+
+h1, h2, h3, h4 ,h5, h6 {
+	text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+
+	.box-div {
+		border-radius: 5px;
+		background-color: #333;
+		padding: 30px;
+		margin: 30px;
+	}
+
+	.message-div {
+		border-radius: 5px;
+		background-color: #333;
+		padding: 40px;
+		margin: 30px;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: white;
+		color: black;
+	}
+
+	.box-div {
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 30px;
+		margin: 30px;
+	}
+
+	.message-div {
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 40px;
+		margin: 30px;
+	}
+	
+}
