@@ -13,4 +13,4 @@ CMD [ "/bin/bash" ]
 
 EXPOSE $PORT
 
-ENTRYPOINT gunicorn application:app --preload -b 0.0.0.0:$PORT
+ENTRYPOINT gunicorn -b 0.0.0.0:$PORT application:app --preload
