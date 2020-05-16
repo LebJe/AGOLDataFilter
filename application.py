@@ -86,9 +86,10 @@ def getCredentials() -> Tuple[str, str, str]:
 	row = db.execute("SELECT url, username, password FROM credentials")
 
 	result = row.fetchone()
-	if result:
-		return (result.url, result.username, result.password)
 
 	db.commit()
+
+	if result:
+		return (result.url, result.username, result.password)
 
 	return None
