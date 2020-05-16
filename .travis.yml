@@ -1,0 +1,9 @@
+# upload to heroku
+services:
+- docker
+language: ruby
+script:
+- curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+- "heroku container:login"
+- "heroku container:push web --app agol-data-filter"
+- "heroku container:release web --app agol-data-filter"
