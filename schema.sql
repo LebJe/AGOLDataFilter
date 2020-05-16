@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS credentials(
+	id SERIAL PRIMARY KEY NOT NULL,
+	url VARCHAR(300),
+	username VARCHAR(300),
+password VARCHAR(300));

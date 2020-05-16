@@ -23,6 +23,16 @@ input[type=number], select {
 	display: inline-block;
 }
 
+input[type=url], select {
+	width: 50%;
+	display: inline-block;
+}
+
+input[type=password], select {
+	width: 50%;
+	display: inline-block;
+}
+
 textarea {
 	width: 50%;
 	display: inline-block;
@@ -49,6 +59,13 @@ input[type=number]:focus {
 	outline: none;
 }
 
+input[type=url]:focus {
+	outline: none;
+}
+
+input[type=password]:focus {
+	outline: none;
+}
 
 p {
 	text-align: center;

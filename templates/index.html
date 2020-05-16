@@ -6,6 +6,54 @@
 
 {% block body %}
 	<div class="box-div">
+		<form action="/updateCredentials" method="POST">
+			<div class="form-group">				
+				<p>
+					
+					<label for="url">Provide the URL that is used to access your organization's ArcGIS Online/Enterprise website. For example: https://my-organizatiom.maps.arcgis.com</label>
+								
+					<input type="url" class="form-control" name="url" id="url" placeholder="URL:" value="{{ c[0] }}" required>
+									
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+								
+				</p>
+
+				<p>
+					
+					<label for="username">Provide the username that is used to sign in to your ArcGIS Online/Enterprise account:</label>
+								
+					<input type="text" class="form-control" name="username" id="username" placeholder="Username:" value="{{ c[1] }}" required>
+									
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+								
+				</p>
+
+				<p>
+					
+					<label for="password">Provide the password that is used to sign in to your ArcGIS Online/Enterprise account:</label>
+								
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password:" value="{{ c[2] }}" required>
+									
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+								
+				</p>
+			</div>
+
+			<div class="form-group">
+				<p>
+					<button class="btn btn-primary" type="submit">Update</button>
+				</p>
+			</div>
+		</form>
+	</div>
+
+	<div class="box-div">
 		<p>
 			<a href="/filter" class="btn btn-primary">Filter</a>
 		</p>

@@ -1,3 +1,5 @@
+psycopg2-binary
+SQLAlchemy
 arcgis
 Flask
 gunicorn==20.0.2
