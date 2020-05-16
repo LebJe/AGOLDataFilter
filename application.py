@@ -141,8 +141,6 @@ def updateFL():
 
 		for i in range(0, len(fSet.features)):
 			geo = fSet.features[i].as_dict["geometry"]
-		
-			print(fSet.features[i])
 
 			for state in states:
 
