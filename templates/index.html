@@ -5,14 +5,21 @@
 {% endblock title %}
 
 {% block body %}
+	{% if message %}
+		<div style="padding: 10px; margin: 10px;" class="alert alert-danger alert-dismissible fade show" role="alert">
+			<p>{{ message }}</p>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div>
+	{% endif %}
+
 	<div class="box-div">
-		<form action="/updateCredentials" method="POST">
+		<form action="/updateInfo" method="POST">
 			<div class="form-group">				
 				<p>
 					
-					<label for="url">Provide the URL that is used to access your organization's ArcGIS Online/Enterprise website. For example: https://my-organizatiom.maps.arcgis.com</label>
+					<label for="url">Provide the URL that is used to access your organization's ArcGIS Portal:</label>
 								
-					<input type="url" class="form-control" name="url" id="url" placeholder="URL:" value="{{ c[0] }}" required>
+					<input type="url" class="form-control" name="url" id="url" placeholder="URL:" value="{{ i[0] }}" required>
 									
 					<div class="valid-feedback">
 						Looks good!
@@ -24,7 +31,7 @@
 					
 					<label for="username">Provide the username that is used to sign in to your ArcGIS Online/Enterprise account:</label>
 								
-					<input type="text" class="form-control" name="username" id="username" placeholder="Username:" value="{{ c[1] }}" required>
+					<input type="text" class="form-control" name="username" id="username" placeholder="Username:" value="{{ i[1] }}" required>
 									
 					<div class="valid-feedback">
 						Looks good!
@@ -36,7 +43,19 @@
 					
 					<label for="password">Provide the password that is used to sign in to your ArcGIS Online/Enterprise account:</label>
 								
-					<input type="password" class="form-control" name="password" id="password" placeholder="Password:" value="{{ c[2] }}" required>
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password:" value="{{ i[2] }}" required>
+									
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+								
+				</p>
+
+				<p>
+					
+					<label for="flURL">Provide the password that is used to sign in to your ArcGIS Online/Enterprise account:</label>
+								
+					<input type="url" class="form-control" name="flURL" id="flURL" placeholder="Feature Layer URL:" value="{{ i[3] }}" required>
 									
 					<div class="valid-feedback">
 						Looks good!
@@ -55,7 +74,7 @@
 
 	<div class="box-div">
 		<p>
-			<a href="/filter" class="btn btn-primary">Filter</a>
+			<a href="/startFilter" class="btn btn-primary">Filter</a>
 		</p>
 	</div>
 {% endblock body %}
