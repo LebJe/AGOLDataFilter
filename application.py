@@ -16,7 +16,7 @@ def connect() -> scoped_session:
 	if not os.environ.get("DATABASE_URL"):
 		raise RuntimeError("Missing environment variable DATABASE_URL.")
 
-	engine = create_engine(os.environ.get("DATABASE_URL"))
+	engine = create_engine(os.environ.get("DATABASE_URL") + "?sslmode=require")
 
 	return scoped_session(sessionmaker(bind=engine))
 
@@ -38,8 +38,6 @@ prepareDB()
 @app.route("/")
 def index():
 	credentials = getCredentials()
-
-	print(credentials)
 
 	return render_template("index.html", c=credentials)
 
