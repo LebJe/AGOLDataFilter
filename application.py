@@ -50,7 +50,7 @@ def index():
 	return render_template("index.html", i=info, message=message)
 
 
-@app.route("/automation/surveyData", methods=["POST"])
+@app.route("/automation/surveyData", methods=["POST", "OPTIONS"])
 def surveyData():
 	return updateFL()
 
@@ -90,6 +90,7 @@ def getInfo() -> Tuple[str, str, str, str]:
 		return (result.url, result.username, result.password, result.fl_url)
 
 	return None
+
 
 def updateFL():
 	info = getInfo()
