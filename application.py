@@ -137,8 +137,6 @@ def updateFL():
 
 		fSet: FeatureSet = featureLayer.query()
 
-		data: List[str] = []
-
 		states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado",
 				"Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois",
 				"Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
@@ -163,3 +161,5 @@ def updateFL():
 		return redirect("/?message=Filter Complete.")
 	else:
 		render_template("errors/error.html", message="Missing Credentials"), 403 
+
+		

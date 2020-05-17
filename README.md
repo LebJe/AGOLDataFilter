@@ -8,6 +8,8 @@
 ### I have a PostgreSQL Database
 Set the environment variable `DATABASE_URL` to the URL of your SQL database (preferably PostgreSQL), `PORT` to the port you want the application to listen on, and `SSL` to `TRUE` if your database requires an SSL connection, or `FALSE` otherwise. DO NOT append `?sslmode=require` to `DATABASE_URL`, this is done by the application, depending on the state of `SSL`.
 
+The `DATABASE_URL` must be formatted like this: `postgres://user:password@host_name:port_number/database_name`.
+
 ### I don't have a PostgreSQL Database
 Set the environment variable `PORT` to the port you want the application to listen on. Then go to [Run](#run).
 
