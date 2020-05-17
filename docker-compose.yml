@@ -1,0 +1,33 @@
+version: '3.7'
+
+volumes:
+  db_data:
+
+x-shared_environment: &shared_environment
+  DATABASE_URL: postgres://user:password@db:5432/db
+  SSL: "FALSE"
+  PORT: $PORT
+
+services:
+  web:
+    image: agoldatafilter:latest
+    build:
+      context: .
+    environment:
+      <<: *shared_environment
+    depends_on:
+      - db
+    ports:
+      - '$PORT:$PORT'
+      
+  db:
+    image: postgres:12.1-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data/pgdata
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+    ports:
+      - '5432:5432'

@@ -18,7 +18,15 @@ def connect() -> scoped_session:
 	if not os.environ.get("DATABASE_URL"):
 		raise RuntimeError("Missing environment variable DATABASE_URL.")
 
-	engine = create_engine(os.environ.get("DATABASE_URL") + "?sslmode=require")
+	dbURL: str= os.environ["DATABASE_URL"]
+
+	if os.environ.get("SSL") is not None:
+		if os.environ["SSL"].capitalize() == "TRUE":
+			engine = create_engine(dbURL + "?sslmode=require")
+		else:
+			engine = create_engine(dbURL)
+	else:
+		engine = create_engine(dbURL)
 
 	return scoped_session(sessionmaker(bind=engine))
 
